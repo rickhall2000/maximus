@@ -1,0 +1,108 @@
+;; Event
+
+[{:db/ident :event/type
+   :db/doc "one of: phone-call, showing"
+   :db/id #db/id[:db.part/db]
+   :db/valueType :db.type/keyword
+   :db/index true
+   :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :event/agent
+  :db/doc "Sales agent name"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ ;; Guestcard
+ {:db/ident :contact/first-name
+  :db/doc "A guest's first name"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/last-name
+  :db/doc "A guest's last name"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/created-on
+  :db/doc "The date and time the lead was created"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/instant
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/email-address
+  :db/doc "A guest's email address"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/unique :db.unique/value
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/postal-address
+  :db/doc "A guest's postal address"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+
+ {:db/ident :contact/status
+  :db/doc "A contact's status"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/keyword
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/event
+  :db/doc "The events for a contact"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/ref
+  :db/index true
+  :db/cardinality :db.cardinality/many
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :contact/lead-source
+  :db/doc "who told them about us"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+  {:db/ident :contact/phone-number
+  :db/doc "A phone number"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :transaction/user
+  :db/doc "who initiated the trasaction?"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/string
+  :db/index true
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ {:db/ident :transaction/ref
+  :db/doc "to which db entity does the transaction apply?"
+  :db/id #db/id[:db.part/db]
+  :db/valueType :db.type/ref
+  :db/index true
+  :db/cardinality :db.cardinality/many
+  :db.install/_attribute :db.part/db} ]

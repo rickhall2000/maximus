@@ -1,0 +1,26 @@
+;; -*- mode: clojure -*-
+;; vim: set filetype=clojure:
+[
+ {:db/id #db/id [:db.part/user -1]
+  :contact/first-name "jonathan"
+  :contact/last-name "hart"
+  :contact/email-address "jhart@gmail.com"
+  :contact/postal-address "123 Fake Street"
+  :contact/status :guestcard.status/active}
+
+ {:db/id #db/id [:db.part/user -2]
+  :contact/first-name "armond"
+  :contact/last-name "honore"
+  :contact/email-address "ahonore@gmail.com"
+  :contact/postal-address "1313 Mockingbird Lane"
+  :contact/status :guestcard.status/active}
+
+ {:db/id #db/id [:db.part/user -3]
+  :contact/first-name "william"
+  :contact/last-name "murray"
+  :contact/email-address "gopher@gmail.com"
+  :contact/postal-address "22 Acacia Ave"
+  :contact/lead-source "Rick Hall"
+  :contact/status :guestcard.status/active}
+ ]
+
